@@ -15,5 +15,8 @@ public class Guest {
     private String name;
     @Enumerated(EnumType.STRING)
     private Status status;
+    @ManyToOne
+    @JoinColumn(name = "exposition_id", referencedColumnName = "id")
+    private Exposition exposition;
 
 }
