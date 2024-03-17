@@ -14,7 +14,7 @@ public class Chapter {
     private Integer id;
     private String name;
     private String district;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private Member president;
     @OneToMany(mappedBy = "chapter", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Member> members;
