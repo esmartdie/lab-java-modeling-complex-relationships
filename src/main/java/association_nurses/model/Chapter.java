@@ -14,7 +14,8 @@ public class Chapter {
     private Integer id;
     private String name;
     private String district;
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "president_id", referencedColumnName = "id")
     private Member president;
     @OneToMany(mappedBy = "chapter", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Member> members;
